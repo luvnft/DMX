@@ -6,7 +6,7 @@ const Home = ({ onRouteChange }) => {
       <div className='text-center'>
         <h1 className='font-semibold text-6xl'>
           Mint and Watch<br />
-          <span className='font-thin text-sky-400'>XRLP Music NFTs</span>
+          <span className='font-thin text-sky-400'>XRPL Music NFTs</span>
         </h1>
         <button 
           onClick={() => onRouteChange("Mint")}
