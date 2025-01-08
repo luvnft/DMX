@@ -13,8 +13,8 @@ const Mint = ({ uploadToPinata, mintNFT }) => {
         accept: { 'video/*': [] }, 
         onDrop: (acceptedFiles) => {
             const selectedFile = acceptedFiles[0];
-            if (selectedFile.size > 2 * 1024 * 1024) { 
-                setError("File size exceeds 2 MB limit");
+            if (selectedFile.size > 33 * 1024 * 1024) { 
+                setError("File size exceeds 33 MB limit");
                 setFile(null); 
             } else {
                 setError(null); 
@@ -50,8 +50,8 @@ const Mint = ({ uploadToPinata, mintNFT }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen text-white pt-10">
-            <h2 className="text-3xl font-bold mb-6">Mint Your Video NFT</h2>
+        <div className="flex flex-col items-center justify-center min-h-screen pt-10 text-white">
+            <h2 className="mb-6 text-3xl font-bold">Mint Your Video NFT</h2>
             <div 
                 {...getRootProps({ 
                     className: `rounded-lg text-center cursor-pointer ${file ? 'pb-3' : 'border-2 border-dashed border-purple-500 p-6 m-4 '}`
@@ -60,20 +60,20 @@ const Mint = ({ uploadToPinata, mintNFT }) => {
                 <input {...getInputProps()} />
                 {file ? (
                     <div>
-                        <video controls className="max-w-full max-h-40 rounded-lg">
+                        <video controls className="max-w-full rounded-lg max-h-40">
                             <source src={file.preview} type={file.type} />
                             Your browser does not support the video tag.
                         </video>
                     </div>
                 ) : (
-                    <p className="text-purple-500">Drag & drop a video file, or click to select one <br/><span className='text-sm text-red-600 font-bold'>Max size only 2 MB</span></p>
+                    <p className="text-purple-500">Drag & drop a video file, or click to select one <br/><span className='text-sm font-bold text-red-600'>Max size only 33 MB</span></p>
                 )}
             </div>
-            {error && <p className="text-red-500 mb-4">{error}</p>}
+            {error && <p className="mb-4 text-red-500">{error}</p>}
             {file && (
                 <button
                     onClick={clearVideo}
-                    className="bg-red-500 text-white rounded-lg px-4 py-2 mb-4">
+                    className="px-4 py-2 mb-4 text-white bg-red-500 rounded-lg">
                     Clear
                 </button>
             )}
@@ -85,7 +85,7 @@ const Mint = ({ uploadToPinata, mintNFT }) => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter NFT Name"
-                    className="w-full p-2 rounded-lg border border-gray-300 text-black"
+                    className="w-full p-2 text-black border border-gray-300 rounded-lg"
                 />
             </div>
 
@@ -95,7 +95,7 @@ const Mint = ({ uploadToPinata, mintNFT }) => {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Enter NFT Description"
-                    className="w-full p-2 rounded-lg border border-gray-300 text-black"
+                    className="w-full p-2 text-black border border-gray-300 rounded-lg"
                 />
             </div>
 
@@ -111,7 +111,7 @@ const Mint = ({ uploadToPinata, mintNFT }) => {
                     inputMode="decimal"
                     placeholder="0.00"
                     onChange={(e) => setPrice(e.target.value)}
-                    className="w-full p-2 rounded-lg border border-gray-300 text-black"
+                    className="w-full p-2 text-black border border-gray-300 rounded-lg"
                 />
             </div>
             <button
