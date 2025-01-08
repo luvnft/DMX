@@ -15,7 +15,7 @@ import Explore from "./components/Explore/Explore";
 
 const pinata = new PinataSDK({
   pinataJwt: jws.jws,
-  pinataGateway: "beige-sophisticated-baboon-74.mypinata.cloud",
+  pinataGateway: "https://xrp.mypinata.cloud",
 });
 
 const App = () => {
@@ -61,7 +61,7 @@ const App = () => {
           const nftDataArray = []; 
           for (let i=0; i< totalCount; i++) {
             const nftRes = await contract.getNftData(i);
-            const response = await pinata.gateways.get(`https://beige-sophisticated-baboon-74.mypinata.cloud/ipfs/${nftRes[3]}`);
+            const response = await pinata.gateways.get(`https://xrp.mypinata.cloud/ipfs/${nftRes[3]}`);
             const { description, name, price, video } = response.data;
 
             const nftData = {
@@ -172,7 +172,7 @@ const App = () => {
       const metadata = await pinata.upload.json({
         name: name,
         description: description,
-        video: `https://beige-sophisticated-baboon-74.mypinata.cloud/ipfs/${uploadImage.IpfsHash}`,
+        video: `https://xrp.mypinata.cloud/ipfs/${uploadImage.IpfsHash}`,
         price: price
       });
 
@@ -253,8 +253,8 @@ const App = () => {
   return (
     <div>
       <ToastContainer />
-      <div className="App min-h-screen">
-        <div className="gradient-bg-welcome h-screen w-screen">
+      <div className="min-h-screen App">
+        <div className="w-screen h-screen gradient-bg-welcome">
             <Navbar 
               onRouteChange={onRouteChange}
               connect={onConnect}

@@ -7,23 +7,23 @@ const Navbar = ({ onRouteChange, connect, address, connected, wallet }) => {
   };
 
   return (
-    <div className="fixed z-10 backdrop-blur-sm mt-5">
+    <div className="fixed z-10 mt-5 backdrop-blur-sm">
       <section className="relative mx-auto">
-        <nav className="flex justify-between items-center text-white w-screen px-24">
+        <nav className="flex items-center justify-between w-screen px-24 text-white">
           <div className="flex items-center">
-            <p className="text-3xl font-bold font-heading cursor-pointer" onClick={() => onRouteChange("home")}>
-              Ignitus Networks
+            <p className="text-3xl font-bold cursor-pointer font-heading" onClick={() => onRouteChange("home")}>
+               𝖃music
             </p>
           </div>
 
           <ul className="flex space-x-12 font-semibold font-heading">
             <li>
-              <p className='no-underline text-gray-200 cursor-pointer' onClick={() => onRouteChange("explore")}>
+              <p className='text-gray-200 no-underline cursor-pointer' onClick={() => onRouteChange("explore")}>
                 Explore
               </p>
             </li>
             <li>
-              <p className='no-underline text-gray-200 cursor-pointer' onClick={() => onRouteChange("mint")}>
+              <p className='text-gray-200 no-underline cursor-pointer' onClick={() => onRouteChange("mint")}>
                 Mint
               </p>
             </li>
@@ -49,7 +49,7 @@ const Navbar = ({ onRouteChange, connect, address, connected, wallet }) => {
                 className="inline-flex items-center justify-center border-[0.5px] p-2 w-22 h-9 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 onClick={handleRedirect}
               >
-                Install Metamask Wallet
+                Install Petra Wallet
               </button>
             )}
           </div>
