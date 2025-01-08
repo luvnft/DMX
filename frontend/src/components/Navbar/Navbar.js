@@ -12,7 +12,7 @@ const Navbar = ({ onRouteChange, connect, address, connected, wallet }) => {
         <nav className="flex items-center justify-between w-screen px-24 text-white">
           <div className="flex items-center">
             <p className="text-3xl font-bold cursor-pointer font-heading" onClick={() => onRouteChange("home")}>
-               𝖃music
+               𝖃MUSIK
             </p>
           </div>
 
