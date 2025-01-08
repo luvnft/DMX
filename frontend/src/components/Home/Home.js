@@ -2,10 +2,10 @@ import React from 'react';
 
 const Home = ({ onRouteChange }) => {
   return (
-    <div className='text-white flex justify-center items-center h-screen'>
+    <div className='flex items-center justify-center h-screen text-white'>
       <div className='text-center'>
-        <h1 className='font-semibold text-6xl'>
-          Mint and Watch<br />
+        <h1 className='text-6xl font-semibold'>
+          Mint and Play<br />
           <span className='font-thin text-sky-400'>XRPL Music NFTs</span>
         </h1>
         <button 
